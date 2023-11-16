@@ -8,7 +8,7 @@ public:
 
     // Iterate and store each word to the stack
     for(int i=0; i<n; i++) {
-        if(s[i] != ' ')//the sky is blue 
+        if(s[i] != ' ')//the sky is blue  "
             tmp.push_back(s[i]);    
         if((i == n-1 || s[i] == ' ') && !tmp.empty())//what if after last word there is a space for that i am checking if tmt is empty or not to add
             st.push(tmp), tmp = "";
