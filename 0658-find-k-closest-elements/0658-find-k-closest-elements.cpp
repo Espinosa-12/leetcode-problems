@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
-        vector<int> ans;
+    /*    vector<int> ans;
        
        auto lowerBound=lower_bound(arr.begin(),arr.end(),x);
        
@@ -50,7 +50,24 @@ public:
        
        sort(ans.begin(),ans.end());
        
-       return ans;
-       
+       return ans;*/
+       int i=0;
+        int j=arr.size()-1;
+        //here we are just focusing on making the range of answers
+        
+        while(j-i+1!=k){
+            int l=abs(arr[i]-x);
+            int p=abs(arr[j]-x);
+            if(l<=p){
+                j--;
+            }else{
+                i++;
+            }
+        }
+        vector<int>result;
+        for(int m=i;m<=j;m++){
+            result.push_back(arr[m]);
+        }
+        return result;
     }
 };
